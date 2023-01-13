@@ -17,7 +17,9 @@ public class DilemmaModel {
 
     private String daName;
     private String enName;
+    @Lob
     private String daDescription;
+    @Lob
     private String enDescription;
 
     @OneToMany(mappedBy = "dilemmaModelCP", cascade = CascadeType.ALL)
