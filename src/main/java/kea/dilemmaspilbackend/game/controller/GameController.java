@@ -28,6 +28,7 @@ class GameController {
     public LobbyResponse joinLobby(@DestinationVariable String lobby, Player player) {
         // player is a json request
 
+        System.out.println("player: " + player.getName() + " is joining lobby: " + lobby);
 
         LobbyResponse lobbyResponse = new LobbyResponse();
 
