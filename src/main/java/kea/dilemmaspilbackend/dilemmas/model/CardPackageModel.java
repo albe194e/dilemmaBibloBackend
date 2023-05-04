@@ -19,6 +19,8 @@ public class CardPackageModel {
     private String daName;
     private String enName;
 
+    private String colorCode;
+
     @ManyToMany(fetch = FetchType.EAGER,
             cascade = {
                     CascadeType.ALL}
