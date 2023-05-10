@@ -22,6 +22,8 @@ public class DilemmaModel {
     @Lob
     private String enDescription;
 
+
+
     @OneToMany(mappedBy = "dilemmaModelCP", cascade = CascadeType.ALL)
     @JsonIgnore
     private Set<CommentsDilemmaModel> commentsDilemmaModels = new HashSet<>();

@@ -61,6 +61,12 @@ public class LobbyController {
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
 
+    @GetMapping("api/get/read/lobby/{lobbyID}")
+    public ResponseEntity<GameLobby> getLobby(@PathVariable String lobbyID){
+        GameLobby gameLobby = gameService.fetchGameLobbyFromLobbyCode(lobbyID);
+        return new ResponseEntity<>(gameLobby, HttpStatus.OK);
+    }
+
 
     @PostMapping("api/post/save/lobbyStats")
     public ResponseEntity<HttpStatus> saveStats(@RequestBody GameLobby gameLobby){
