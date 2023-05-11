@@ -1,6 +1,5 @@
-package kea.dilemmaspilbackend.dilemmas.model;
+package kea.dilemmaspilbackend.admin.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,18 +11,17 @@ import javax.persistence.Id;
 @Entity
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-public class Feedback {
+public class Suggestion {
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private String feedback;
+    private String data;
 
-    public Feedback(String feedback){
-        this.feedback = feedback;
+    public Suggestion(String data){
+        this.data = data;
     }
 
 }
