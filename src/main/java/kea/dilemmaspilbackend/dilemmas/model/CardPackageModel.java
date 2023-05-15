@@ -19,9 +19,11 @@ public class CardPackageModel {
     private String daName;
     private String enName;
 
+
     private String colorCode;
 
-    private String shortDescription;
+    private String daDescription;
+    private String enDescription;
 
     @ManyToMany(fetch = FetchType.EAGER,
             cascade = {
