@@ -15,14 +15,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+// Skal extende OncePerRequestFiller hvis vi skal bruge den senere.
 @Component
-public class JwtRequestFilter extends OncePerRequestFilter {
+public class JwtRequestFilter {
 
     @Autowired
     private JwtDetailsService jwtDetailsService;
 
     @Autowired
     private JWTUtilToken jwtUtilToken;
+
+    /*
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
@@ -48,6 +51,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         }
 
         // Once we get the token validate it.
+
         if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
             UserDetails userDetails = this.jwtDetailsService.loadUserByUsername(username);
@@ -69,4 +73,6 @@ public class JwtRequestFilter extends OncePerRequestFilter {
         chain.doFilter(request, response);
     }
 
+
+     */
 }

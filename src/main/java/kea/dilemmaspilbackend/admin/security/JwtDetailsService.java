@@ -12,12 +12,15 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Optional;
 
+
+// Skal implemente UserDetailService hvis den skal bruges senere
 @Service
-public class JwtDetailsService implements UserDetailsService {
+public class JwtDetailsService {
     @Autowired
     AdminUserRepository adminUserRepository;
 
 
+    /*
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Optional<AdminUser> adminUserDB = adminUserRepository.findAdminUserByUsername(username);
@@ -25,4 +28,6 @@ public class JwtDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("Username could not be found");
         return new User(adminUserDB.get().getUsername(), adminUserDB.get().getPassword(), new ArrayList<>());
     }
+
+     */
 }

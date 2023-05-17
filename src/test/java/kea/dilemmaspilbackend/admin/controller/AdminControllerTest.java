@@ -28,12 +28,16 @@ public class AdminControllerTest {
     private JWTUtilToken jwtUtilToken;
     private AdminUserService adminUserService;
 
+
+    /*
     @BeforeEach
     public void setUp() {
         adminUserService = new AdminUserService(authenticationManager, jwtUtilToken, jwtDetailsService);
         jwtDetailsService = new JwtDetailsService();
         mockMvc = MockMvcBuilders.standaloneSetup(new AdminController(adminUserService)).build();
     }
+
+     */
 
 
     @Test
@@ -50,4 +54,8 @@ public class AdminControllerTest {
                 .andExpect(status().isOk())
                 .andDo(print());
     }
+
+  @Test
+  void login() {
+  }
 }
