@@ -2,8 +2,11 @@ package kea.dilemmaspilbackend.dilemmas.controller;
 
 import kea.dilemmaspilbackend.dilemmas.model.CardPackageModel;
 import kea.dilemmaspilbackend.dilemmas.model.DilemmaModel;
+import kea.dilemmaspilbackend.dilemmas.model.Statistics;
 import kea.dilemmaspilbackend.dilemmas.service.CardPackageService;
 import kea.dilemmaspilbackend.dilemmas.service.DilemmaService;
+import kea.dilemmaspilbackend.dilemmas.service.StatisticsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,6 +18,9 @@ public class CardPackageController {
     private final CardPackageService cardPackageService;
     private final DilemmaService dilemmaService;
 
+    @Autowired
+    private StatisticsService statisticsService;
+
     CardPackageController(CardPackageService cardPackageService, DilemmaService dilemmaService){
         this.cardPackageService = cardPackageService;
         this.dilemmaService = dilemmaService;
@@ -23,7 +29,16 @@ public class CardPackageController {
     @PostMapping("/api/post/create/cardpackage")
     public ResponseEntity<Map<String, String>> createCardpackage(@RequestBody CardPackageModel cardPackageModel){
 
+
+
         cardPackageService.save(cardPackageModel);
+
+        Statistics packageStats = new Statistics();
+        packageStats.setCardPackageModel(cardPackageModel);
+        packageStats.setTimesPlayed(0);
+
+        statisticsService.createStatistics(packageStats);
+
 
         Map<String, String> msg = new HashMap<>();
 
