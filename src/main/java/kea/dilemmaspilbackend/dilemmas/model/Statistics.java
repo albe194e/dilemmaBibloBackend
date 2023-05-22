@@ -8,14 +8,15 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class Statistics {
+
+public class Statistics implements Comparable<Statistics>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int statId;
 
     @OneToOne
     @JoinColumn(name = "packageId", referencedColumnName = "id")
@@ -25,8 +26,13 @@ public class Statistics {
 
 
 
+
     public void incrementTimesPlayed(){
         this.timesPlayed++;
     }
 
+    @Override
+    public int compareTo(Statistics o) {
+        return timesPlayed - o.timesPlayed;
+    }
 }

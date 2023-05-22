@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 
 @Service
 public class StatisticsService {
@@ -13,13 +14,7 @@ public class StatisticsService {
     @Autowired
     private StatisticsRepository statisticsRepository;
 
-    public List<Statistics> getAllTimesPlayedDesc(){
 
-        List<Statistics> stats = statisticsRepository.getAllByOrderByTimesPlayedDesc();
-
-        System.out.println("List with stats" + stats);
-        return stats;
-    }
 
     public void createStatistics(Statistics stat){
 
@@ -30,13 +25,17 @@ public class StatisticsService {
     public void incrementTimesPlayed(Statistics stat){
 
 
-        stat.setTimesPlayed(stat.getTimesPlayed() + 1);
+        stat.incrementTimesPlayed();
         statisticsRepository.save(stat);
 
     }
 
     public Statistics getStatisticsById(Integer id){
-        return statisticsRepository.findById(Long.valueOf(id)).get();
+        return statisticsRepository.findById(id).get();
     }
 
+    public Set<Statistics> getAllByPopularity() {
+
+        return statisticsRepository.getAllByOrderByTimesPlayedDesc();
+    }
 }
