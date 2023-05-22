@@ -22,6 +22,9 @@ public class CardPackageModel {
 
     private String colorCode;
 
+    private String daShortDescription;
+    private String enShortDescription;
+
     private String daDescription;
     private String enDescription;
 
