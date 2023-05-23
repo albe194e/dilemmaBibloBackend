@@ -24,6 +24,13 @@ public class FeedbackController {
 
         return feedbackRepository.findAll();
     }
+
+    @GetMapping("/api/get/suggestion")
+    public Iterable<Suggestion> getSuggestions(){
+
+        return suggestionRepository.findAll();
+    }
+
     @GetMapping("/api/get/findAll/suggestion")
     public Iterable<Suggestion> getSuggestion(){
 
