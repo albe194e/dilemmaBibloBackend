@@ -22,6 +22,9 @@ public class DilemmaModel {
     @Lob
     private String enDescription;
 
+    private String extraQuestion;
+
+
 
 
     @OneToMany(mappedBy = "dilemmaModelCP", cascade = CascadeType.ALL)

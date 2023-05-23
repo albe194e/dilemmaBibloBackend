@@ -141,5 +141,11 @@ class GameController {
         return answer;
     }
 
+    @MessageMapping("/game/update/added/{lobby}/{answer}")
+    @SendTo("/topic/answer/added/{lobby}")
+    public String updateRangeAdded(@DestinationVariable String lobby, @DestinationVariable String answer){
+        return answer;
+    }
+
 
 }

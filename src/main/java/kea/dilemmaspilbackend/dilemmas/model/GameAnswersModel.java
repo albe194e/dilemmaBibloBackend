@@ -17,6 +17,7 @@ public class GameAnswersModel {
 
     private int dilemmaDifficulty;
     private int discussionQuality;
+    private int addedQuestion;
 
     @ManyToOne
     @JsonBackReference
