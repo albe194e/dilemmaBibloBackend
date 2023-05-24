@@ -1,3 +1,4 @@
+/*
 package kea.dilemmaspilbackend.admin.security;
 
 import kea.dilemmaspilbackend.admin.model.AdminUser;
@@ -29,5 +30,7 @@ public class JwtDetailsService {
         return new User(adminUserDB.get().getUsername(), adminUserDB.get().getPassword(), new ArrayList<>());
     }
 
-     */
+
 }
+
+ */

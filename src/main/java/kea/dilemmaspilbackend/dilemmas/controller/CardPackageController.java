@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
 import java.util.*;
 
 @RestController
@@ -47,8 +48,11 @@ public class CardPackageController {
        return ResponseEntity.ok(msg);
     }
 
-    @PostMapping("/api/post/delete/{id}/cardpackage")
+    @DeleteMapping("/api/post/delete/{id}/cardpackage")
+    @Transactional
     public ResponseEntity<Map<String, String>> deleteCardpackage(@PathVariable Integer id){
+
+        statisticsService.deleteStatisticsByCardPackageId(id);
 
         cardPackageService.deleteById(id);
 

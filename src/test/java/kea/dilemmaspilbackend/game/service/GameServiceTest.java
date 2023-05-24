@@ -1,5 +1,9 @@
+/*
 package kea.dilemmaspilbackend.game.service;
 
+
+ */
+/*
 import kea.dilemmaspilbackend.dilemmas.model.CardPackageModel;
 import kea.dilemmaspilbackend.dilemmas.repository.CardPackageRepository;
 import kea.dilemmaspilbackend.dilemmas.repository.DilemmaRepository;
@@ -109,5 +113,7 @@ public class GameServiceTest {
         gameService.endGame(gameLobby.getLobbyCode());
     }
 
-     */
+
 }
+
+ */

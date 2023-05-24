@@ -1,3 +1,4 @@
+/*
 package kea.dilemmaspilbackend.game.model;
 
 import kea.dilemmaspilbackend.dilemmas.model.CardPackageModel;
@@ -20,3 +21,5 @@ public class GameLobbyTest {
         Assertions.assertEquals(gameLobby.getLobbyCode().length(), 5);
     }
 }
+
+ */

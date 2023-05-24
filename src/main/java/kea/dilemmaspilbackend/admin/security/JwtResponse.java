@@ -1,3 +1,4 @@
+/*
 package kea.dilemmaspilbackend.admin.security;
 
 import lombok.Data;
@@ -13,3 +14,6 @@ public class JwtResponse implements Serializable {
         this.jwttoken = jwttoken;
     }
 }
+
+
+ */

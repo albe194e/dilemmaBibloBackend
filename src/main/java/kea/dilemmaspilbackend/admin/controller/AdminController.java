@@ -1,7 +1,7 @@
 package kea.dilemmaspilbackend.admin.controller;
 
 import kea.dilemmaspilbackend.admin.model.AdminUser;
-import kea.dilemmaspilbackend.admin.security.JwtResponse;
+//import kea.dilemmaspilbackend.admin.security.JwtResponse;
 import kea.dilemmaspilbackend.admin.service.AdminUserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
