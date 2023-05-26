@@ -17,11 +17,14 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 
 public class AdminUserService {
+
 
     /*
     @Value("${salt}") String salt;
@@ -73,10 +76,25 @@ public class AdminUserService {
 
      */
 
+    public Set<AdminUser> findAll() {
+        Set<AdminUser> set = new HashSet<>(adminRepo.findAll());
+        return set;
+    }
+
     public Optional<AdminUser> findAdminUser(String username, String password) {
         return adminRepo.findAdminUserByUsernameAndPassword(username, password);
     }
 
+
+
+    public AdminUser save(AdminUser object) {
+        return adminRepo.save(object);
+    }
+
+
+    public void deleteAdminUserById(Integer integer) {
+        adminRepo.deleteById(Long.valueOf(integer));
+    }
 
 
 }
