@@ -31,11 +31,17 @@ public class StatisticsService {
     }
 
     public Statistics getStatisticsById(Integer id){
-        return statisticsRepository.findById(id).get();
+        return statisticsRepository.findStatisticsByCardPackageModelId(id).get();
     }
 
     public Set<Statistics> getAllByPopularity() {
 
         return statisticsRepository.getAllByOrderByTimesPlayedDesc();
+    }
+
+    public void deleteStatisticsByCardPackageId(Integer id) {
+
+        statisticsRepository.deleteByCardPackageModel_Id(id);
+
     }
 }

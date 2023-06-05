@@ -26,6 +26,8 @@ public class StatisticsController {
     @PutMapping("api/put/{id}/statistics/{stat}")
     public void updateStat(@PathVariable Integer id, @PathVariable String stat){
 
+        System.out.println("id: " + id + " stat: " + stat);
+
         Statistics statistics = statisticsService.getStatisticsById(id);
 
         switch (stat){

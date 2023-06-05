@@ -1,4 +1,6 @@
+/*
 package kea.dilemmaspilbackend.admin.security;
+
 
 import java.io.Serializable;
 import java.util.Date;
@@ -74,3 +76,5 @@ public class JWTUtilToken implements Serializable {
         return (username.equals(userDetails.getUsername()) && !isTokenExpired(token));
     }
 }
+
+ */

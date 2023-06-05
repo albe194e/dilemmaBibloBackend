@@ -1,6 +1,9 @@
+/*
 package kea.dilemmaspilbackend.test_utility;
 
 
+ */
+/*
 import org.apache.ibatis.jdbc.ScriptRunner;
 
 import java.io.BufferedReader;
@@ -51,3 +54,5 @@ public class SqlScript {
 
 
 }
+
+ */
