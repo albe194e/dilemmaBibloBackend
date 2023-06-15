@@ -34,6 +34,8 @@ public class FeedbackController {
     @GetMapping("/api/get/findAll/suggestion")
     public Iterable<Suggestion> getSuggestion(){
 
+
+
         return suggestionRepository.findAll();
     }
     @PostMapping("/api/post/suggestion")
